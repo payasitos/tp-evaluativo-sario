@@ -4,13 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// FIREBASE -> Importamos HERRAMIENTAS de la Base de Datos
+import { environment } from 'src/enviroments/enviroment'; // vincula a la BD con la app
+import { AngularFireModule } from '@angular/fire/compat'; // trabaja con las colecciones de informacion 
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // trabaja con la autentificacion
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // trabaja con imagenes y archivos
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
