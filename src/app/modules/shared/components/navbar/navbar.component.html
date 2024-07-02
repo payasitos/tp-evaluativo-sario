@@ -1,0 +1,35 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" id="menuSecciones" [matMenuTriggerFor]="seccion">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #seccion="matMenu">
+      <button mat-menu-item routerLink="/main">Inicio</button>
+    </mat-menu>
+    <span>Portafolio</span>
+  
+    <!-- boton de inicio -->
+    <button mat-button routerLink="/inicio">Inicio</button>
+    <!-- menu desplegable -->
+    <button mat-button [matMenuTriggerFor]="producto">Productos</button>
+    <mat-menu #producto="matMenu">
+      <button mat-menu-item routerLink="/general">general</button>
+      <button mat-menu-item routerLink="/general">general</button>
+      <button mat-menu-item routerLink="/comics">comics</button>
+      <button mat-menu-item routerLink="/juegos">juegos</button>
+      <button mat-menu-item routerLink="/merch">merch</button>
+    </mat-menu>
+  
+    <span class="example-spacer"></span>
+  
+      <!-- inicio de sesion y el registro de un nuevo usuario -->
+      <button mat-button [matMenuTriggerFor]="usuario"><mat-icon>person</mat-icon></button>
+      <mat-menu #usuario="matMenu">
+        <button mat-menu-item routerLink="/registro">Registrarse</button>
+        <button mat-menu-item routerLink="/iniciosesion">Iniciar sesion</button>
+      </mat-menu>
+  
+      <!-- carrito -->
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>

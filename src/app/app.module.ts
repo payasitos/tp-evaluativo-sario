@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { environment } from 'src/enviroments/enviroment'; // vincula a la BD con la app
 import { AngularFireModule } from '@angular/fire/compat'; // trabaja con las colecciones de informacion 
 import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // trabaja con la autentificacion
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // trabaja con imagenes y archivos
+import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // trabaja con imagenes y archivos 
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // trab
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
