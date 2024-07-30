@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { AutentificacionRoutingModule } from './autentificacion-routing.module';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
+
 
 
 @NgModule({
@@ -12,8 +11,7 @@ import { RegistroComponent } from './registro/registro.component';
     RegistroComponent
   ],
   imports: [
-    CommonModule,
-    AutentificacionRoutingModule
+    CommonModule
   ]
 })
 export class AutentificacionModule { }

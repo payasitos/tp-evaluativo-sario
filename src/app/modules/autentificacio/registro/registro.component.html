@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <h1>Registrate</h1>
+        <i class="material-icons" style="font-size: 150px;">person</i>
+
+        <!-- nombre de usuario. -->
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese nombre de usuario.</mat-label>
+
+            <!-- ngmodel = directiva bidireccional utilizada para formularios -->
+            <input [(ngModel)]="usuarios.nombre" matInput placeholder="Ej: valentino">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <!-- apellido. -->
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese su apellido.</mat-label>
+            <input [(ngModel)]="usuarios.apellido" matInput placeholder="Ej: sario">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <!-- ingresar email. -->
+        <mat-form-field appearance="fill">
+            <mat-label>Ingrese su email.</mat-label>
+            <input [(ngModel)]="usuarios.email" matInput placeholder="Ej: sariiovalen@gmail.com">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+
+        <!-- rol de usuario. -->
+        <mat-form-field>
+            <mat-label>seleccione rol de usuario.</mat-label>
+            <select [(ngModel)]="usuarios.rol" matNativeControl required>
+                <option value="admin">administrador</option>
+                <option value="vis">visitante</option>
+            </select>
+        </mat-form-field>
+
+        <!-- registro de contraseña. -->
+
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input [(ngModel)]="usuarios.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint align="start"> minimo: 6/{{input.value.length}}</mat-hint>
+          </mat-form-field>
+
+        <!-- boton para registrarse. -->
+        <button class="boton" mat-raised-button color="primary" (click)="registrar()">registrar</button>
+
+    </div>
+</div>

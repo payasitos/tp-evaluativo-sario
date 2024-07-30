@@ -3,25 +3,38 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// FIREBASE -> Importamos HERRAMIENTAS de la Base de Datos
-import { environment } from 'src/enviroments/enviroment'; // vincula a la BD con la app
-import { AngularFireModule } from '@angular/fire/compat'; // trabaja con las colecciones de informacion 
-import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // trabaja con la autentificacion
-import { AngularFireStorageModule } from '@angular/fire/compat/storage'; // trabaja con imagenes y archivos 
+// IMPORTAMOS COMPONENTES GLOBALES
 import { SharedModule } from './modules/shared/shared.module';
+
+// FIREBASE -> importamos HERRAMIENTAS de la Base de Datos
+import { environment } from 'src/enviroments/enviroment'; // vincula a la BD con la APP
+import { AngularFireModule } from '@angular/fire/compat'; // trabaja con las colecciones de información
+import { AngularFireAuthModule } from '@angular/fire/compat/auth'; // trabaja con la autentificación
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { InicioSesionComponent } from './autentificacion/inicio-sesion/inicio-sesion.component'; // trabaja con imágenes y archivos
+
+/**
+ * npm install firebase --force <- fuerza la instalación
+ * npm install @angular/fire --save --force
+ */
 
 @NgModule({
   declarations: [
     AppComponent,
+    InicioSesionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule,
+    // COMPONENTES GLOBALES
+    SharedModule,
+    // VINCULACIÓN CON FIREBASE
+    AngularFireModule.initializeApp(environment.firebaseConfig), // Inicializar Firebase dentro del proyecto
     AngularFireAuthModule,
-    AngularFireStorageModule,
-    SharedModule
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,30 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarruselComponent } from './components/carrusel/carrusel.component';
-import { CarrdsComponent } from './components/carrds/carrds.component';
-import { MainComponent } from './pages/main/main.component';
 
+import { InicioRoutingModule } from './inicio-routing.module';
 
+// VISTAS - PÁGINAS
+import { InicioComponent } from './pages/inicio/inicio.component';
+
+// COMPONENTES LOCALES
+import { CardComponent } from './components/card/card.component';
+import { CaruselComponent } from './components/carusel/carusel.component';
+
+// COMPONENTES DE MATERIAL
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
-    CarruselComponent,
-    CarrdsComponent,
-    MainComponent
+    InicioComponent,
+    CardComponent,
+    CaruselComponent
   ],
   imports: [
-    CommonModule
-  ],
-  exports:[
-    CarruselComponent,
-    CarrdsComponent
+    CommonModule,
+    InicioRoutingModule,
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class InicioModule { }

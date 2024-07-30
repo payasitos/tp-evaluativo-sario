@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainComponent } from './modules/inicio/pages/main/main.component';
-import { RegistroComponent } from './modules/autentificacion/registro/registro.component';
-import { InicioSesionComponent } from './modules/autentificacion/inicio-sesion/inicio-sesion.component';
+import { InicioComponent } from './modules/inicio/pages/inicio/inicio.component';
 
 const routes: Routes = [
+  // RUTA INICIAL / PRINCIPAL AL COMPONENTE
   {
-    path: "", component: MainComponent
+    path:"",component: InicioComponent
+  },
+  // CARGA PEREZOSA -> RUTA AL MÓDULO INICIO
+  // loadChildren: Indica que será ruta hija del módulo raíz
+  // ()=>: Función flecha que importará la dirección del módulo
+  // .then: Promesa que nos devolerá un valor resuelto o rechazado
+  {
+    path:"",loadChildren:()=>import('./modules/inicio/inicio.module').then(m=>m.InicioModule)
   },
   {
-    path: "main", component: MainComponent
+    path:"",loadChildren:()=>import('./modules/producto/producto.module').then(m=>m.ProductoModule)
   },
   {
-    path: "registro", component: RegistroComponent
+    path:"",loadChildren:()=>import('./modules/autentificacion/autentificacion.module').then(m=>m.AutentificacionModule)
   },
   {
-    path: "inicio_sesion", component: InicioSesionComponent
+    path:"",loadChildren:()=>import('./modules/admin/admin.module').then(m=>m.AdminModule)
   }
 ];
 
