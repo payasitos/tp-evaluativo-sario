@@ -10,16 +10,16 @@ import { TosComponent } from './tos/tos.component';
 
 const routes: Routes = [
   {
-    path:"producto",component:ProductoComponent
+    path:"comisiones",component:ComisionesComponent
   },
   {
-    path:"alimentacion",component:AlimentacionComponent
+    path:"contacto",component:ContactoComponent
   },
   {
-    path:"indumentaria",component:IndumentariaComponent
+    path:"portafolio",component:PortafolioComponent
   },
   {
-    path:"juguetes",component:JugueteComponent
+    path:"tos",component:TosComponent
   }
 ];
 @NgModule({

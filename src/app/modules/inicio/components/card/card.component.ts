@@ -14,24 +14,27 @@ export class CardComponent {
    constructor(){
      this.info = [
        {
-        id:"",
+        idDibujo:"",
         nombre: "icon",
         precio: 2800,
         imagen: "https://f2.toyhou.se/file/f2-toyhou-se/images/46525336_aik3KyhKrrDFa7g.gif",
+        tipo: "icon",
         alt: "tamaño de comision tipo headshot/busto."
        },
        {
-        id: " ",
+        idDibujo: " ",
         nombre: "HalfBody",
         precio: 5000,
         imagen: "https://f2.toyhou.se/file/f2-toyhou-se/images/56953423_qnlDJAT17Ph0KXu.png",
+        tipo: "halfbody",
         alt: "tamaño de comision tipo halfbody/hasta la cadera.",
        },
        {
-         id: " ",
+         idDibujo: " ",
          nombre: "  FullBody",
          precio: 7900,
          imagen: "https://f2.toyhou.se/file/f2-toyhou-se/images/58846425_fnwjudbqEexTKlc.png",
+         tipo: "fullbody",
          alt: "tamaño de comision tipo fullbody/cuerpo completo.",
        }
      ]

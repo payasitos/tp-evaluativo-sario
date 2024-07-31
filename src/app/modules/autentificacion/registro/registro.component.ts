@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
 // importamos servicio de autentificación
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../services/auth.service';
 // importamos servicio de firestore
-import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { FirestoreService } from '../../shared/services/firestore.service';
 // importamos componente de rutas de angular
 import { Router } from '@angular/router';
-/* // componente de encriptación
+// componente de encriptación
 import * as CryptoJS from 'crypto-js';
 // paquetería de alertas personalizadas
-import Swal from 'sweetalert2'; */
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-registro',
@@ -90,7 +90,7 @@ export class RegistroComponent {
      * y produce una cadena de caracteres HEXADECIMAL que va a representar a su hash
      * toString: Convierte el resultado en la cadena de caracteres legible
      */
-    this.usuarios.password = CryptoJS.SHA256(this.usuarios.password).toString();
+    this.usuarios.password =   CryptoJS.SHA256(this.usuarios.password).toString();
 
     // Llamamos a la función guardUsuario()
     this.guardarUsuario();

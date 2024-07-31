@@ -3,5 +3,6 @@ export interface Dibujo {
     nombre: string;
     precio: number;
     imagen: string;
+    tipo: string;
     alt: string;
 }

@@ -2,9 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
+
+// vista
 import { AdminComponent } from './pages/admin/admin.component';
+
+//componente
 import { TableComponent } from './components/table/table.component';
 
+// Paqueterias para formularios y formularios reactivos
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+// Componentes de material
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -13,7 +22,17 @@ import { TableComponent } from './components/table/table.component';
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule
+  ],
+  exports: [
+    AdminComponent,
+    TableComponent,
+    FormsModule,
+    ReactiveFormsModule,
+    MatIconModule
   ]
 })
 export class AdminModule { }
