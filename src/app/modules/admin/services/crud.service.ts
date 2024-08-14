@@ -23,7 +23,7 @@ export class CrudService {
         dibujo.idDibujo = idDibujo;
 
         const resultado = await this.DibujosCollection.doc(idDibujo).set(dibujo);
-
+    
         resolve(resultado);
       } catch (error) {
         reject(error);
